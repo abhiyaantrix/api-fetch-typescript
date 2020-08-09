@@ -1,0 +1,54 @@
+{
+  "name": "api-fetch-typescript",
+  "version": "1.0.0",
+  "description": "API operations using Fetch Web APIs and TypeScript",
+  "main": "index.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/abhiyaantrix/api-fetch-typescript.git"
+  },
+  "author": {
+    "name": "Chetan Patil",
+    "email": "patilchetan@live.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/abhiyaantrix/api-fetch-typescript/issues"
+  },
+  "homepage": "https://github.com/abhiyaantrix/api-fetch-typescript#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/node": "^14.0.27",
+    "eslint": "^7.6.0",
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-import-resolver-typescript": "^2.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "husky": "^4.2.5",
+    "lint-staged": "^10.2.11",
+    "prettier": "^2.0.5",
+    "query-string": "^6.13.1",
+    "typescript": "^3.9.7"
+  },
+  "scripts": {
+    "test": "",
+    "lint": "yarn run lint:js && yarn run prettier",
+    "lint:js": "eslint --ext .js,.ts ./src/ --fix",
+    "lint:staged": "lint-staged",
+    "prettier": "prettier . --write"
+  },
+  "lint-staged": {
+    "src/**/*.{js,ts,jsx,tsx}": [
+      "yarn run lint:js",
+      "yarn run prettier"
+    ],
+    "src/**/*.{json,md,svg}": [
+      "yarn run prettier"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}
